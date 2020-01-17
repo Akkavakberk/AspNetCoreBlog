@@ -1,0 +1,26 @@
+﻿@model MyBlogApp.Models.AppRegisterModel
+
+@{
+    ViewData["Title"] = "Register";
+}
+
+<h5>Register</h5>
+
+<form asp-controller="Auth" asp-action="Register" method="post">
+    <div asp-validation-summary="All"></div>
+    <div class="form-group">
+        <label asp-for="UserName" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+            <input asp-for="UserName" class="form-control" />
+            <span asp-validation-for="UserName" class="text-danger"></span>
+        </div>
+        <label asp-for="Password" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+            <input asp-for="Password" class="form-control" />
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="col-md-5">
+        <button type="submit">Kaydol</button>
+    </div>
+</form>

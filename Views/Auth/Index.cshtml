@@ -1,0 +1,48 @@
+﻿@model IEnumerable<MyBlogApp.Models.BlogModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+    <p>
+        <a asp-action="BlogAdd" asp-controller="Auth" class="btn btn-outline-success btn-sm">Yeni Blog</a>
+        <a asp-action="Logout" asp-controller="Auth" class="btn btn-outline-danger btn-sm">Çıkış</a>
+    </p>
+
+<table class="table table-sm">
+    <thead>
+        <tr>
+
+            <th>
+                @Html.DisplayNameFor(model => model.BlogName)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.BlogDate)
+            </th>
+            <th></th>
+            <th></th>
+
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.BlogName)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.BlogDate)
+            </td>
+
+            <td>
+                <a asp-action="BlogRemove" asp-route-id="@item.Id" class="btn btn-outline-danger btn-sm">Sil</a>
+            </td>
+            <td>
+                <a asp-action="BlogEdit" asp-route-id="@item.Id" class="btn btn-outline-success btn-sm">Düzenle</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

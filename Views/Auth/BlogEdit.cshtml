@@ -1,0 +1,52 @@
+﻿@model MyBlogApp.Models.BlogModel
+
+@{
+    ViewData["Title"] = "BlogEdit";
+}
+
+<h1>Blog Düzenle</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="BlogEdit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="CategoryId" class="control-label"></label>
+                <input asp-for="CategoryId" class="form-control" />
+                <span asp-validation-for="CategoryId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BlogName" class="control-label"></label>
+                <input asp-for="BlogName" class="form-control" />
+                <span asp-validation-for="BlogName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Image" class="control-label"></label>
+                <input asp-for="Image" class="form-control" />
+                <span asp-validation-for="Image" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BlogDate" class="control-label"></label>
+                <input  asp-for="BlogDate" class="form-control" />
+                <span asp-validation-for="BlogDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BlogDescription" class="control-label"></label>
+                <textarea asp-for="BlogDescription" class="form-control"></textarea>
+                <span asp-validation-for="BlogDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BlogContent" class="control-label"></label>
+                <textarea asp-for="BlogContent" class="form-control"></textarea>
+                <span asp-validation-for="BlogContent" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-outline-success btn-sm" />
+            </div>
+        </form>
+    </div>
+</div>
+
+

@@ -1,0 +1,17 @@
+﻿@model MyBlogApp.Models.BlogModel
+
+@{
+    Layout = "_LayoutContent";
+}
+<div>
+    <h3>@Model.BlogName</h3>
+    <small class="text-right">@Model.BlogDate</small>
+    <hr />
+    <img src="/@Model.Image" alt="" class="img-fluid" />
+    <hr />
+
+    <h5>@Model.BlogDescription</h5>
+    <br />
+    <hr />
+    <p>@Model.BlogContent</p>
+</div>

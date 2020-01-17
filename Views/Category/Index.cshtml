@@ -1,0 +1,23 @@
+﻿@model IEnumerable<MyBlogApp.Models.CategoryModel>
+
+@{
+    Layout = "_LayoutContent";
+}
+
+<div class="text-white bg-dark">
+    Kategoriler
+</div>
+
+<hr />
+@foreach (var kategori in Model)
+{
+    <div class="card d-inline-block m-2" style="width:30%">
+        <img class="card-img-top" src="images/code.jpg" alt="Card image" style="width:100%">
+        <div class="card-body">
+            <h4 class="card-title">@kategori.CategoryName</h4>
+            <a asp-controller="Blog" asp-action="ListCategoryBlog" asp-route-id="@kategori.Id" class="btn  float-right btn-sm bg-dark  text-white">Daha Fazla...</a>
+
+        </div>
+    </div>
+}
+

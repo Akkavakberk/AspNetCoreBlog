@@ -1,0 +1,23 @@
+﻿@model IEnumerable<MyBlogApp.Models.BlogModel>
+@{
+    ViewData["Title"] = "Home Page";
+}
+@foreach (var blog in Model)
+{ 
+    
+    <div class="text-center border border-secondary rounded mb-3">
+        <div class="card" style="width: 100%;">
+            <img src="@blog.Image" class="card-img-top img-fluid" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">@blog.BlogName</h5>
+                <p class="card-text">
+                    @blog.BlogDescription
+                </p>
+                <a asp-controller="Blog" asp-action="Details" asp-route-id="@blog.Id" class="btn  float-right btn-sm bg-dark  text-white">Daha Fazla...</a>
+               
+            </div>
+        </div>
+        
+    </div>
+}
+

@@ -1,0 +1,12 @@
+﻿
+
+
+
+@using (Html.BeginForm("ListBlogForWord", "Blog", FormMethod.Get))
+{
+    <form class="form-inline mt-2 mt-md-0">       
+            @Html.TextBox("key", null, new { @class = "form-control w-75 d-inline-block" })
+        <button class="btn btn-outline-secondary btn-lg" type="submit">Ara</button>
+    </form>
+}
+

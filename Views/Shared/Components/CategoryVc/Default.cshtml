@@ -1,0 +1,17 @@
+﻿@model IEnumerable<MyBlogApp.Models.CategoryModel>
+
+@{
+    ViewData["Title"] = "CategoryVc";
+}
+
+<ul class="list-group list-group-flush list-group-horizontal">
+    @foreach (var kategori in Model)
+    {
+        
+            <a asp-controller="Blog" asp-action="ListCategoryBlog" asp-route-id="@kategori.Id" class="text-white bg-dark mx-3">
+                @kategori.CategoryName
+            </a>
+        
+    }
+</ul>
+
